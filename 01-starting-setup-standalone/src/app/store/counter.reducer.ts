@@ -4,12 +4,17 @@ import { increment } from "./counter.action";
 const initialState = 0;
 
 //1st way 
-export const counterReducer = createReducer(
-    initialState,
-    on(increment, (state, action) => state + action.value )
-);
+// export const counterReducer = createReducer(
+//     initialState,
+//     on(increment, (state, action) => state + action.value )
+// );
 
 // 2nd  way to create Reducer 
-// export function counterReducer(state = initialState){
-//     return state;
-// }
+export function counterReducer(state = initialState, action : any){
+    
+    if(action.type == '[Counter] Increment'){
+        return state + action.value;
+    }
+
+    return state;
+}
