@@ -1,18 +1,21 @@
 import { Action, createAction, props } from "@ngrx/store";
 
-// export const increment = createAction(
-//     '[Counter] Increment', 
-//     props<{value: number}>()
-// );
+// 1st way using createAction
+export const increment = createAction(
+    '[Counter] Increment', 
+    props<{value: number}>()
+);
 
 
-export class IncrementAction implements Action{
-    readonly type=  '[Counter] Increment';
+//2nd way creating action without createAction 
 
-    constructor(public value: number ){
+// export class IncrementAction implements Action{
+//     readonly type=  '[Counter] Increment';
 
-    }
+//     constructor(public value: number ){
 
-}
+//     }
 
-export type CounterActions = IncrementAction;
+// }
+
+// export type CounterActions = IncrementAction;
