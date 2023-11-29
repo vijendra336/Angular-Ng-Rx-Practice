@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { CounterService } from '../counter.service';
 import { Store } from '@ngrx/store';
-import { increment } from '../store/counter.action';
+import { decrement, increment } from '../store/counter.action';
 // import { IncrementAction  } from '../store/counter.action';
 
 @Component({
@@ -11,16 +11,16 @@ import { increment } from '../store/counter.action';
   styleUrls: ['./counter-controls.component.css'],
 })
 export class CounterControlsComponent {
-  constructor(private store:Store) {}
+  constructor(private store: Store) {}
 
   increment() {
-    this.store.dispatch(increment({value:2}))
+    this.store.dispatch(increment({ value: 2 }));
 
-    // 2nd way without using createAction 
+    // 2nd way without using createAction
     //  this.store.dispatch(new IncrementAction(2))
   }
 
   decrement() {
-  
+    this.store.dispatch(decrement({ value: 2 }));
   }
 }
