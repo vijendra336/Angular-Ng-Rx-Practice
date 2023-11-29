@@ -14,7 +14,9 @@ export function counterReducer(state = initialState, action: any) {
   if (action.type == '[Counter] Increment') {
     return state + action.value;
   } else if (action.type == '[Counter] Decrement') {
-    return state - action.value
+    return state - action.value;
+  } else if (action.type == '[Counter] Set') {
+    return  action.value;
   }
 
   return state;
